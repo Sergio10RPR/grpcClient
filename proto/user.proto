@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+
+message User {
+  string id = 1;
+  string carnet = 2;
+  string nombre = 3;
+  string curso = 4;
+  string nota = 5;
+  string semestre = 6;
+  string year = 7;
+
+}
+
+service UserService {
+  rpc GetUser (UserRequest) returns (User);
+  rpc CreateUser (User) returns (User);
+}
+
+message UserRequest {
+  string id = 1;
+}
